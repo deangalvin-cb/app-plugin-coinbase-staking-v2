@@ -1,5 +1,3 @@
-const pluginFolder = "kiln";
-
 function serialize_data(pluginName, contractAddress, selector) {
 	const len = Buffer.from([pluginName.length]);
 	const name = Buffer.from(pluginName)

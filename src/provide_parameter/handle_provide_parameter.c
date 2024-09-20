@@ -24,47 +24,12 @@ void handle_provide_parameter(ethPluginProvideParameter_t *msg) {
            msg->parameter);
 
     switch (context->selectorIndex) {
-        case KILN_V1_DEPOSIT:
-            msg->result = ETH_PLUGIN_RESULT_ERROR;
-            break;
-
-        case KILN_V1_WITHDRAW:
-        case KILN_V1_WITHDRAW_EL:
-        case KILN_V1_WITHDRAW_CL:
-            msg->result = ETH_PLUGIN_RESULT_OK;
-            break;
-        case KILN_V1_BATCH_WITHDRAW:
-        case KILN_V1_BATCH_WITHDRAW_EL:
-        case KILN_V1_BATCH_WITHDRAW_CL:
-            msg->result = ETH_PLUGIN_RESULT_OK;
-            break;
-
-        case KILN_V1_REQUEST_EXIT:
-            msg->result = ETH_PLUGIN_RESULT_OK;
-            break;
-
         case KILN_V2_STAKE:
             msg->result = ETH_PLUGIN_RESULT_ERROR;
             break;
         case KILN_V2_REQUEST_EXIT:
         case KILN_V2_MULTICLAIM:
         case KILN_V2_CLAIM:
-            msg->result = ETH_PLUGIN_RESULT_OK;
-            break;
-
-        case KILN_LR_DEPOSIT_INTO_STRATEGY:
-            handle_lr_deposit_into_strategy(msg, context);
-            break;
-        case KILN_LR_QUEUE_WITHDRAWALS:
-            handle_lr_queue_withdrawals(msg, context);
-            break;
-        case KILN_LR_COMPLETE_QUEUED_WITHDRAWALS:
-            handle_lr_complete_queued_withdrawals(msg, context);
-            break;
-        case KILN_LR_DELEGATE_TO:
-            handle_lr_delegate_to(msg, context);
-            break;
-        case KILN_LR_UNDELEGATE:
             msg->result = ETH_PLUGIN_RESULT_OK;
             break;
 

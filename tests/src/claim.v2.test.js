@@ -5,9 +5,9 @@ import { ethers } from 'ethers';
 import { parseEther } from 'ethers/lib/utils';
 import { ledgerService } from '@ledgerhq/hw-app-eth';
 
-const contractAddr = '0x8d6fd650500f82c7d978a440348e5a9b886943bf';
+const contractAddr = '0x86358f7b33b599c484e0335b8ee4f7f7f92d8b60';
 
-const pluginName = 'Kiln';
+const pluginName = 'CoinbaseStaking';
 const abi_path = `../cal/abis/${contractAddr}.json`;
 const abi = require(abi_path);
 
