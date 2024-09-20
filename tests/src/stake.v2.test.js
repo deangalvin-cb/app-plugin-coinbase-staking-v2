@@ -2,7 +2,7 @@ import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 import {
   waitForAppScreen,
-  kilnJSON,
+  CoinbaseStakingJSON,
   zemu,
   genericTx,
   nano_models,
@@ -13,9 +13,9 @@ import { ethers } from 'ethers';
 import { parseEther, parseUnits } from 'ethers/lib/utils';
 import { ledgerService } from '@ledgerhq/hw-app-eth';
 
-const contractAddr = '0x5db5235b5c7e247488784986e58019fffd98fda4';
+const contractAddr = '0x2e3956e1ee8b44ab826556770f69e3b9ca04a2a7';
 
-const pluginName = 'Kiln';
+const pluginName = 'CoinbaseStaking';
 const abi_path = `../cal/abis/${contractAddr}.json`;
 const abi = require(abi_path);
 

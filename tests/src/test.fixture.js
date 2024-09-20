@@ -43,7 +43,7 @@ const nano_models: DeviceModel[] = [
   },
 ];
 
-const kilnJSON = generate_plugin_config();
+const coinbaseStakingJSON = generate_plugin_config();
 
 const SPECULOS_ADDRESS = '0xFE984369CE3919AA7BB4F431082D027B4F8ED70C';
 const RANDOM_ADDRESS = '0xaaaabbbbccccddddeeeeffffgggghhhhiiiijjjj';
@@ -66,7 +66,7 @@ function zemu(device, func) {
     let elf_path;
     let lib_elf;
     elf_path = device.eth_path;
-    lib_elf = { Kiln: device.path };
+    lib_elf = { CoinbaseStaking: device.path };
     const sim = new Zemu(elf_path, lib_elf);
     try {
       await sim.start({ ...sim_options_nano, model: device.name });
@@ -74,7 +74,7 @@ function zemu(device, func) {
       const eth = new Eth(transport);
       eth.setLoadConfig({
         baseURL: null,
-        extraPlugins: kilnJSON,
+        extraPlugins: coinbaseStakingJSON,
       });
       await func(sim, eth);
     } finally {

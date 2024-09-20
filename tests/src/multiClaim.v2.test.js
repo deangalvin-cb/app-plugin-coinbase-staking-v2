@@ -5,9 +5,9 @@ import { ethers } from 'ethers';
 import { parseEther } from 'ethers/lib/utils';
 import { ledgerService } from '@ledgerhq/hw-app-eth';
 
-const contractAddr = '0x5db5235b5c7e247488784986e58019fffd98fda4';
+const contractAddr = '0x2e3956e1ee8b44ab826556770f69e3b9ca04a2a7';
 
-const pluginName = 'Kiln';
+const pluginName = 'CoinbaseStaking';
 const abi_path = `../cal/abis/${contractAddr}.json`;
 const abi = require(abi_path);
 
@@ -18,7 +18,7 @@ nano_models.forEach(function (model) {
       const contract = new ethers.Contract(contractAddr, abi);
 
       const { data } = await contract.populateTransaction.multiClaim(
-        ['0x5db5235b5c7e247488784986e58019fffd98fda4'],
+        ['0x2e3956e1ee8b44ab826556770f69e3b9ca04a2a7'],
         [
           [42, 47],
           [150, 2],
